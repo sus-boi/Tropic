@@ -2,6 +2,7 @@ html {
 	font-size: 10px
 }
 body {
+	min-width: 102.4rem;
 	font-family: 'Neue Haas Unica Pro','fakt pro', sans-serif;
 	font-size: 2.2rem;
 	line-height: 1.25;
@@ -27,12 +28,23 @@ h1,h2,h3,h4,h5,h6 {
 h1.site-title {
 	color: #00ff00
 }
+h5 {
+	margin-top: 3em;
+}
 
-ol {
-	list-style-type: decimal;
+ol,p {
+	margin-bottom: 1em;
+	list-style-position: inside;
 }
 ol li {
-	margin: 0 1em;
+    margin-left: 1.1em;
+    text-indent: -1.1em;
+}
+.numbers {
+	list-style-type: decimal;
+}
+.letters {
+	list-style-type: upper-alpha;
 }
 #header {
 	position: fixed;
@@ -86,7 +98,7 @@ ol li {
 	flex-basis: 100%;
 	padding: 3.6rem;
 	display: flex;
-	flex-direction: row
+	flex-direction: row;
 }
 .sidebar {
 	font-size: 1.4rem;
@@ -141,8 +153,7 @@ ol li {
 }
 .content article .image:hover a:after {
 	visibility: visible;
-	opacity: 1;
-	transition: all 200ms ease-in-out
+	opacity: 1;	
 }
 .content article p {
 	margin-bottom: 1em
@@ -166,8 +177,7 @@ ol li {
 	display: block;
 	width: calc(100% - 1.2rem);
 	box-shadow: 1.2rem 1.2rem 0 rgb(170, 170, 170);
-	margin-bottom: 2.4rem;
-	transition: all 200ms ease-in-out
+	margin-bottom: 2.4rem;	
 }
 .ephemera span {
 	visibility: hidden;
@@ -181,8 +191,7 @@ ol li {
 	right: 12px;
 	bottom: 0;
 	color: rgb(0, 0, 0);
-	background-color: rgb(0, 255, 0);
-	transition: all 200ms ease-in-out
+	background-color: rgb(0, 255, 0);	
 }
 .ephemera a {
 	position: relative
@@ -207,7 +216,6 @@ ol li {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	width: 6.6rem;
 	background-color: rgb(170, 170, 170);
 	color: rgb(255, 255, 255);
 	flex-basis: 6.6rem;
@@ -233,7 +241,7 @@ a:link, a:visited {
 	text-decoration: none
 }
 a.active, a:hover {
-	transition: all 200ms ease-in-out;
+	
 	color: rgb(0, 255, 0)
 }
 a.active {
@@ -309,6 +317,10 @@ blockquote:after {
 
 /*  PANEL SLIDING  */
 
+.panel {
+	width: 6.6rem;
+	overflow: scroll;
+}
 .panel .sidebar,
 .panel .content {
 	visibility: hidden;
@@ -318,9 +330,9 @@ blockquote:after {
 .panel.clicked .content {
 	visibility: visible;
 }
-#contexts.clicked {
-	width: calc(66.666% - 7.2rem);
-	padding: 2.4rem 3.6rem;
+.panel.clicked {
+	width: calc(66.666% - 7.2rem) !important;
+	padding: 2.4rem 3.6rem !important;
 	z-index: 9999;
 }
 .panel h3 {
@@ -347,4 +359,26 @@ blockquote:after {
 .panel .content {
 	padding: 0 3.6rem;
 }
+.panel .content a {
+	color: rgb(0,255,0);
+}
+.panel .content a:hover {
+	text-decoration: underline;
+}
 
+/* CONTEXTS */
+
+.thumbnails {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	align-items: top;
+}
+.thumbnails li {
+	flex-basis: calc(28.5714286%);
+	margin: 0 2rem 2rem 0;
+}
+.thumbnails img {
+	display: block;
+	width: 100%;
+}
