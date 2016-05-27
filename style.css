@@ -1,9 +1,15 @@
+@font-face {
+	font-family: 'Unica';
+	src: url('HaasUnica.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}
 html {
 	font-size: 10px
 }
 body {
 	min-width: 102.4rem;
-	font-family: 'Neue Haas Unica Pro','fakt pro', sans-serif;
+	font-family: 'Unica',sans-serif;
 	font-size: 2.2rem;
 	line-height: 1.25;
 	letter-spacing: 0.2px;
