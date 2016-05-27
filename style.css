@@ -342,11 +342,12 @@ blockquote:after {
 	z-index: 9999;
 }
 .panel h3 {
-	position: absolute;
+	position: fixed;
 	width: 6.6rem;
 }
 .clicked h3 {
 	text-align: left;
+	position: absolute;
 }
 .clicked h3 span {
 	display: inline !important;
