@@ -325,6 +325,12 @@ blockquote:after {
 
 .panel {
 	width: 6.6rem;
+	overflow: hidden;
+}
+.panel.clicked {
+	width: calc(75% - 7.2rem) !important;
+	padding: 2.4rem 3.6rem !important;
+	z-index: 9999;
 	overflow: scroll;
 }
 .panel .sidebar,
@@ -335,11 +341,6 @@ blockquote:after {
 .panel.clicked .sidebar,
 .panel.clicked .content {
 	visibility: visible;
-}
-.panel.clicked {
-	width: calc(75% - 7.2rem) !important;
-	padding: 2.4rem 3.6rem !important;
-	z-index: 9999;
 }
 .panel h3 {
 	position: fixed;
@@ -352,13 +353,19 @@ blockquote:after {
 .clicked h3 span {
 	display: inline !important;
 }
+.panel:hover h3 {
+	color: rgb(0,255,0);
+}
+.panel.clicked:hover h3 {
+	color: inherit;
+}
 
 
 /*	PANELS  */
 
 .panel .sidebar {
 	color: #fff;
-	margin-top: 3em;
+	margin-top: 4rem;
 }
 .panel.clicked h3 {
 	width: auto;
@@ -371,6 +378,12 @@ blockquote:after {
 }
 .panel .content a:hover {
 	text-decoration: underline;
+}
+.panel:hover {
+	cursor: pointer;
+}
+.panel.clicked:hover {
+	cursor: auto;
 }
 
 /* CONTEXTS */
@@ -388,4 +401,15 @@ blockquote:after {
 .thumbnails img {
 	display: block;
 	width: 100%;
+}
+
+/* CITY */
+
+#city .content {
+    font-size: 3rem;
+    padding: 4rem 9rem 0 6.6rem;
+}
+
+#city.clicked h3 {
+    padding-left: 6.6rem;
 }
